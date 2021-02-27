@@ -9,12 +9,17 @@ const navItems = [
 
 const Header = () => {
   return (
-    <header className="w-full bg-gray-900 shadow-lg z-50">
+    <header className="sticky top-0 w-full bg-gray-900 shadow-lg z-50">
       <nav className="w-full flex items-center justify-between px-4">
         <div className="ml-20">
           <Link href="/">
             <a>
-              <img src="/logo.png" alt="Logo Preservate" className="p-2" />
+              <img
+                src="/img/logo.jpg"
+                alt="Logo Preservate"
+                className="p-2 rounded-full"
+                style={{ width: '70px' }}
+              />
             </a>
           </Link>
         </div>
