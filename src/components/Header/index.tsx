@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 const navItems = [
   { title: 'Nosotros', link: '/nosotros' },
-  { title: 'Biblioteca', link: '/biblioteca' },
-  { title: 'Contacto', link: '/contacto' },
-  { title: 'Actividades Online', link: '/actividades' },
+  { title: 'Biblioteca', link: '/' },
+  { title: 'Contacto', link: '/' },
+  { title: 'Actividades Online', link: '/' },
 ];
 
 const Header = () => {
@@ -20,7 +20,7 @@ const Header = () => {
         </div>
         <div className="flex w-full" style={{ width: '700px' }}>
           {navItems.map((item) => (
-            <Link href="/" key={item.link}>
+            <Link href={item.link} key={item.link}>
               <a className="w-full px-4 py-2 text-center text-white font-medium transition duration-200 hover:text-yellow-400">
                 {item.title}
               </a>
