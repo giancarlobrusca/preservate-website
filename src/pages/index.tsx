@@ -11,8 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Hero />
-      <main className="p-10">
+
+      <main className="mx-auto p-10">
         <InstagramEmbed
           url="https://www.instagram.com/p/CLp3vqYBSrq/?utm_source=ig_web_copy_link"
           clientAccessToken="1310888445964786|863fbb5153d3191d3199801e33464b18"

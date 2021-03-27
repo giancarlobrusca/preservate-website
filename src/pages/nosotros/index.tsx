@@ -9,7 +9,7 @@ export default function Nosotros() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="p-10 text-xl text-gray-500">
+      <main className="container mx-auto p-10 text-xl text-gray-500">
         <h1 className="text-yellow-400 text-5xl text-center m-10">
           QUIENES SOMOS
         </h1>

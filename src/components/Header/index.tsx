@@ -10,14 +10,14 @@ const navItems = [
 const Header = () => {
   return (
     <header className="sticky top-0 w-full bg-gray-900 shadow-lg z-50">
-      <nav className="w-full flex items-center justify-between px-4">
-        <div className="ml-20">
+      <nav className="container mx-auto flex items-center justify-between">
+        <div className="ml-10 py-1">
           <Link href="/">
             <a>
               <img
                 src="/img/logo.jpg"
                 alt="Logo Preservate"
-                className="p-2 rounded-full"
+                className="p-2 rounded-full  border-2 border-transparent hover:border-yellow-500 transition duration-150"
                 style={{ width: '70px' }}
               />
             </a>
