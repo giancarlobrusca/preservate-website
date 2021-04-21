@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Header from '../components/Header';
+// import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Donations from '../components/Donations';
@@ -12,7 +13,8 @@ export default function Home() {
         <title>PRESERVATE</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      {/* <Header /> */}
+      <Navbar />
       <Hero />
       <About />
       <Donations />
