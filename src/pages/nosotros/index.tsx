@@ -1,14 +1,10 @@
-import Head from 'next/head';
-import Header from '../../components/Header';
+import { AppHead, Navbar } from '../../components';
 
 export default function Nosotros() {
   return (
     <div className="flex flex-col items-center">
-      <Head>
-        <title>PRESERVATE</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
+      <AppHead />
+      <Navbar />
       <main className="container p-10 mx-auto text-xl text-gray-500">
         <h1 className="m-10 text-5xl text-center text-yellow-400">
           Quienes somos
