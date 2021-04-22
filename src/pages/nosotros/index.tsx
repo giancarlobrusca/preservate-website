@@ -9,9 +9,9 @@ export default function Nosotros() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="container mx-auto p-10 text-xl text-gray-500">
-        <h1 className="text-yellow-400 text-5xl text-center m-10">
-          QUIENES SOMOS
+      <main className="container p-10 mx-auto text-xl text-gray-500">
+        <h1 className="m-10 text-5xl text-center text-yellow-400">
+          Quienes somos
         </h1>
         <p>
           Somos un colectivo de graduados y estudiantes de Medicina con fuerte
@@ -34,8 +34,8 @@ export default function Nosotros() {
           función de la audiencia.
         </p>
 
-        <h1 className="text-yellow-400 text-5xl text-center m-10">
-          NUESTRA MISIÓN
+        <h1 className="m-10 text-5xl text-center text-yellow-400">
+          Nuestra misión
         </h1>
 
         <p>

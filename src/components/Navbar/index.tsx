@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-export const Navbar = () => {
+const Navbar = () => {
   const [active, setActive] = useState(false);
 
   const handleClick = () => {

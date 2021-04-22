@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Donations from '../components/Donations';
+import Footer from '../components/Footer';
 // import InstagramEmbed from 'react-instagram-embed';
 
 export default function Home() {
@@ -18,7 +19,8 @@ export default function Home() {
       <Hero />
       <About />
       <Donations />
-      <footer>Hecho con 💚 por AgusMar y GianB</footer>
+      <Footer />
+      {/* <footer>Hecho con 💚 por AgusMar y GianB</footer> */}
     </div>
   );
 }
