@@ -1,26 +1,16 @@
-import Head from 'next/head';
+import { AppHead, Hero, Donations, About, Navbar, Footer } from '../components';
 // import Header from '../components/Header';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Donations from '../components/Donations';
-import Footer from '../components/Footer';
 // import InstagramEmbed from 'react-instagram-embed';
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center w-full">
-      <Head>
-        <title>PRESERVATE</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {/* <Header /> */}
+      <AppHead />
       <Navbar />
       <Hero />
       <About />
       <Donations />
       <Footer />
-      {/* <footer>Hecho con 💚 por AgusMar y GianB</footer> */}
     </div>
   );
 }

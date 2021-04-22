@@ -9,7 +9,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
+      sans: ['Poppins', 'sans-serif'],
     },
     minHeight: {
       64: '64px',
