@@ -8,9 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "10.0.7",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "next": "^10.0.7",
+    "next-sanity": "^0.2.0",
+    "react": "^17.0.1",
+    "react-dom": "17.0.1",
+    "sanity": "^2.2.6"
   },
   "devDependencies": {
     "@types/node": "^14.14.31",
