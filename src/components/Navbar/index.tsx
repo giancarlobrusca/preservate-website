@@ -11,23 +11,19 @@ export const Navbar = () => {
   return (
     <div className="sticky top-0 z-50 w-full bg-white shadow-lg">
       <nav className="container flex items-center w-full mx-auto">
-        <Link href="/">
-          <a className="inline-flex items-center p-2 mr-4 ">
-            <Link href="/">
-              <a>
-                <img
-                  src="/img/logo.jpg"
-                  alt="Logo Preservate"
-                  className="p-2 transition duration-150 border-2 border-transparent rounded-full"
-                  style={{ width: '70px' }}
-                />
-              </a>
-            </Link>
-            <span className="text-xl font-bold tracking-wide text-gray-900 uppercase hover:text-yellow-300">
-              PRESERVATE
-            </span>
-          </a>
-        </Link>
+        <a href="/" className="inline-flex items-center p-2 mr-4 ">
+          <Link href="/">
+            <img
+              src="/img/logo.jpg"
+              alt="Logo Preservate"
+              className="p-2 transition duration-150 border-2 border-transparent rounded-full"
+              style={{ width: '70px' }}
+            />
+          </Link>
+          <span className="text-xl font-bold tracking-wide text-gray-900 uppercase hover:text-yellow-300">
+            PRESERVATE
+          </span>
+        </a>
         <button
           className="inline-flex p-3 ml-auto text-gray-900 rounded outline-none hover:bg-yellow-300 lg:hidden hover:text-white"
           onClick={handleClick}

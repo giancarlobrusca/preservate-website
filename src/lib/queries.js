@@ -1,8 +1,11 @@
-import {groq} from 'next-sanity'
+import { groq } from 'next-sanity';
 
 export const personQuery = groq`
     *[_type == "person"]{
         title,
-        photo
+        age,
+        rol,
+        "imageUrl": photo.asset->url,
+        bio,
     }
-`
+`;
