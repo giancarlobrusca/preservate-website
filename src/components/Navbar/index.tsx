@@ -52,22 +52,13 @@ export const Navbar = () => {
           <div className="flex flex-col items-start w-full lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:items-center lg:h-auto">
             <Link href="/nosotros">
               <a className="items-center justify-center w-full px-3 py-2 text-lg font-medium text-gray-800 rounded lg:inline-flex lg:w-auto hover:text-yellow-300 ">
-                Nosotros
+                Nuestro Equipo
               </a>
             </Link>
-            <Link href="/">
+
+            <Link href="/galleries">
               <a className="items-center justify-center w-full px-3 py-2 text-lg font-medium text-gray-800 rounded lg:inline-flex lg:w-auto hover:text-yellow-300">
-                Biblioteca
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="items-center justify-center w-full px-3 py-2 text-lg font-medium text-gray-800 rounded lg:inline-flex lg:w-auto hover:text-yellow-300">
-                Actividades Online
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="items-center justify-center w-full px-3 py-2 text-lg font-medium text-gray-800 rounded lg:inline-flex lg:w-auto hover:text-yellow-300">
-                Contacto
+                Galería
               </a>
             </Link>
           </div>

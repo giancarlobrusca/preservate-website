@@ -17,7 +17,7 @@ export const PersonaCard = ({ persona }) => {
           <h3 className="leading-none tracking-tighter">{persona.age} Años</h3>
         </div>
       </div>
-      <div className="text-left text-sm w-full h-full items-center justify-center my-4 whitespace-pre-line">
+      <div className="text-center text-sm w-full h-full items-center justify-center my-4 whitespace-pre-line">
         {persona.bio.map((block) => {
           return <p key={block.children[0].text}>{block.children[0].text}</p>;
         })}
