@@ -29,7 +29,7 @@ export default function QuienesSomos({ principals, persons }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const persons = await getPersons();
   const principals = await getPrincipals();
 
