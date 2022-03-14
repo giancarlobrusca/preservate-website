@@ -4,6 +4,7 @@ export const personQuery = groq`
     *[_type == "person" && !principal]{
         title,
         age,
+        ig,
         rol,
         bio,
         "imageUrl": photo.asset->url
@@ -14,6 +15,7 @@ export const principalsQuery = groq`
     *[_type == "person" && principal]{
         title,
         age,
+        ig,
         rol,
         bio,
         "imageUrl": photo.asset->url

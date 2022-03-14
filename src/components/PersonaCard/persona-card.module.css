@@ -1,0 +1,8 @@
+.iglink {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.iglink:hover {
+  color: deeppink;
+}
