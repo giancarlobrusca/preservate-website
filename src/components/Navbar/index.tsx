@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import styles from './navbar.module.css';
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -9,7 +10,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 w-full bg-white shadow-lg">
+    <div className={styles.wrapper}>
       <nav className="container flex items-center w-full mx-auto">
         <a href="/" className="inline-flex items-center p-2 mr-4 ">
           <Link href="/">
@@ -43,7 +44,6 @@ export const Navbar = () => {
             />
           </svg>
         </button>
-        {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
         <div
           className={`${
             active ? '' : 'hidden'

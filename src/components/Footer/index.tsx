@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <footer className="container flex flex-col items-center px-5 py-8 mx-auto">
+    <footer className="container flex flex-col items-center py-8 mx-auto">
       <div className="flex flex-col w-full lg:flex-row lg:items-center">
         <Link href="/">
           <a className="inline-flex items-center p-2 mr-4 ">

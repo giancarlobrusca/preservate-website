@@ -21,7 +21,6 @@ export default function Galleries({ gallery }) {
   return (
     <>
       <AppHead />
-      <Navbar />
       <h1 className={styles.title}>La Galería de Preservate</h1>
       <div className={styles.gallery}>
         {photos.map((photo, index) => (
