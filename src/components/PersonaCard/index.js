@@ -31,9 +31,10 @@ export const PersonaCard = ({ persona }) => {
         </div>
       </div>
       <div className="text-center text-sm w-full h-full items-center justify-center my-4 whitespace-pre-line">
-        {persona.bio.map((block) => {
-          return <p key={block.children[0].text}>{block.children[0].text}</p>;
-        })}
+        {persona.bio &&
+          persona.bio.map((block) => {
+            return <p key={block.children[0].text}>{block.children[0].text}</p>;
+          })}
       </div>
     </div>
   );
