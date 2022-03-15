@@ -1,9 +1,21 @@
+import { useState } from 'react';
 import { BsInstagram } from 'react-icons/bs';
 import styles from './persona-card.module.css';
 
 export const PersonaCard = ({ persona }) => {
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
-    <article className={styles.wrapper}>
+    <article
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      style={{
+        position: isHovering && 'relative',
+        zIndex: isHovering && 20,
+        transition: 'all 1s ease-in',
+      }}
+      className={styles.wrapper}
+    >
       <div className={styles.cardimgshape}>
         <img
           src={persona.imageUrl}
@@ -29,11 +41,20 @@ export const PersonaCard = ({ persona }) => {
         <h2 className="leading-none tracking-tighter mb-1">{persona.rol}</h2>
         <h3 className="leading-none tracking-tighter">{persona.age} Años</h3>
       </div>
-      <div className="text-center text-sm w-full h-full items-center justify-center my-4 whitespace-pre-line">
-        {persona.bio &&
-          persona.bio.map((block) => {
-            return <p key={block.children[0].text}>{block.children[0].text}</p>;
-          })}
+      <div
+        style={{
+          height: '100px',
+          overflow: 'auto',
+        }}
+        className="text-center text-sm w-full h-full items-center justify-center my-4 whitespace-pre-line"
+      >
+        {persona.bio
+          ? persona.bio.map((block) => {
+              return (
+                <p key={block.children[0].text}>{block.children[0].text}</p>
+              );
+            })
+          : null}
       </div>
     </article>
   );
