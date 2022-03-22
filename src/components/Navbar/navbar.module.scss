@@ -1,0 +1,48 @@
+.wrapper {
+  top: 0;
+  width: 1422px;
+  z-index: 2;
+
+  .navWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .homeLink {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 70px;
+        padding: 0.5rem;
+        border-radius: 60px;
+        border: 2px solid transparent;
+      }
+
+      span {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: rgb(41, 41, 41);
+
+        &:hover {
+          color: #fde047;
+        }
+      }
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+
+      a {
+        color: rgb(41, 41, 41);
+        font-size: 1.1rem;
+        font-weight: bold;
+
+        &:hover {
+          color: #fde047;
+        }
+      }
+    }
+  }
+}

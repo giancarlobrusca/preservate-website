@@ -1,0 +1,39 @@
+.title {
+  color: #06b6b3;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 50px 0;
+}
+
+.introText {
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fde047;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #06b6b3;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(41, 41, 41);
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: rgb(95, 95, 95);
+    margin-bottom: 5px;
+  }
+}
