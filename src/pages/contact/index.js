@@ -4,8 +4,6 @@ import { Form } from '../../components/Form';
 import styles from './contact.module.scss';
 
 export default function Contact() {
-  const [type, setType] = useState(null);
-
   return (
     <>
       <AppHead />

@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 70px;
+    margin-right: 10px;
+    border-radius: 60px;
+  }
+
+  .footerlogo {
+    width: calc(100% / 3);
+    font-weight: bold;
+  }
+
+  .centercolumn {
+    width: calc(100% / 3);
+    text-align: center;
+  }
+
+  .socialmedia {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+}

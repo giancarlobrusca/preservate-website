@@ -1,6 +1,6 @@
 .wrapper {
   top: 0;
-  width: 1422px;
+  width: 100%;
   z-index: 2;
 
   .navWrapper {
@@ -46,3 +46,9 @@
     }
   }
 }
+
+// @media (max-width: 1500px) {
+//   .wrapper {
+//     width: 100%;
+//   }
+// }
