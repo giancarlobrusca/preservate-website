@@ -1,30 +1,33 @@
+import { useState } from 'react';
 import { AppHead, Navbar } from '../../components';
-import { getExampleGallery, getGalleries } from '../../lib/api';
+import { getGalleries } from '../../lib/api';
 import styles from './galleries.module.css';
 
-const staticPhotos = [
-  'https://assets.codepen.io/12005/windmill.jpg',
-  'https://assets.codepen.io/12005/suspension-bridge.jpg',
-  'https://assets.codepen.io/12005/sunset.jpg',
-  'https://assets.codepen.io/12005/snowy.jpg',
-  'https://assets.codepen.io/12005/bristol-balloons1.jpg',
-  'https://assets.codepen.io/12005/dog-balloon.jpg',
-  'https://assets.codepen.io/12005/abq-balloons.jpg',
-  'https://assets.codepen.io/12005/disney-balloon.jpg',
-  'https://assets.codepen.io/12005/bristol-harbor.jpg',
-  'https://assets.codepen.io/12005/bristol-balloons2.jpg',
-  'https://assets.codepen.io/12005/toronto.jpg',
-];
-
 export default function Galleries({ gallery }) {
-  const photos = [...staticPhotos, ...gallery[0].photos];
+  const [filter, setFilter] = useState('');
+  const photos = gallery[0].images;
+
+  const filteredPhotos = filter
+    ? photos.filter((photo) => photo.imgType === filter)
+    : photos;
+
   return (
     <>
       <AppHead />
       <h1 className={styles.title}>La Galería de Preservate</h1>
+      <div className={styles.filters}>
+        <button onClick={() => setFilter('team')}>Equipo</button>
+        <button onClick={() => setFilter('talks')}>Charlas</button>
+        <button onClick={() => setFilter('event')}>Evento Preservate</button>
+        <button onClick={() => setFilter('meeting')}>Convivencia</button>
+      </div>
       <div className={styles.gallery}>
-        {photos.map((photo, index) => (
-          <img className={styles.galleryPhoto} key={index} src={photo} />
+        {filteredPhotos.map((photo, index) => (
+          <img
+            key={index}
+            className={styles.galleryPhoto}
+            src={photo.imageUrl}
+          />
         ))}
       </div>
     </>
@@ -36,10 +39,9 @@ function GalleryPhoto({ url, alt }) {
 }
 
 export const getServerSideProps = async () => {
-  const exampleGallery = await getExampleGallery();
-  // const galleries = await getGalleries();
+  const galleries = await getGalleries();
 
   return {
-    props: { gallery: exampleGallery },
+    props: { gallery: galleries },
   };
 };

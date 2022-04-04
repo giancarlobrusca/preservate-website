@@ -23,15 +23,17 @@ export const principalsQuery = groq`
 `;
 
 export const galleriesQuery = groq`
-    *[_type == "galleries"]{
-      _id,
-      title,
-      "photos": photos.images[].asset->url
+    *[_type == "gallery" && title == "Galería Preservate"]{
+      "images": images[]{
+        alt,
+        imgType,
+        "imageUrl": asset->url
+      }
     }
 `;
 
 export const exampleGalleryQuery = groq`
-    *[_type == "galleries" && title == "Ejemplo de Galería"]{
+    *[_type == "galleries" && _title == "Ejemplo de Galería"]{
       "photos": photos.images[].asset->url
     }
 `;
