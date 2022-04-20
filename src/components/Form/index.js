@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './form.module.scss';
+import emailjs from 'emailjs-com';
 
 export const Form = () => {
   const [type, setType] = useState(null);
@@ -27,16 +28,6 @@ export const Form = () => {
           />
           <label for="volunteer">¡Quiero ser voluntarix!</label>
         </div>
-        <div>
-          <input
-            checked={type === 'info'}
-            onChange={(e) => setType(e.target.value)}
-            type="radio"
-            id="info"
-            value="info"
-          />
-          <label for="info">Quiero recibir información sobre la E.S.I.</label>
-        </div>
       </div>
       <FormContent type={type} />
     </>
@@ -44,8 +35,33 @@ export const Form = () => {
 };
 
 function FormContent({ type }) {
-  function onSubmit(e) {
+  function onSubmitCompany(e) {
     console.log('submitted');
+    e.preventDefault();
+
+    emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_COMPANY_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_USER_ID)
+      .then((result) => {
+        console.log(result.text);
+        alert('Su petición se envio correctamente!!')
+        location.reload();
+      }, (error) => {
+        alert('Hubo un error, volve a intentarlo.')
+        console.log(error.text);
+      });
+  }
+  function onSubmitVolunteer(e) {
+    console.log('submitted');
+    e.preventDefault();
+
+    emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_VOLUNTEER_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_USER_ID)
+      .then((result) => {
+        console.log(result.text);
+        alert('Su petición se envio correctamente!!')
+        location.reload();
+      }, (error) => {
+        console.log(error.text);
+        alert('Hubo un error, volve a intentarlo.')
+      });
   }
 
   if (type === 'company') {
@@ -73,28 +89,36 @@ function FormContent({ type }) {
           Cualquier inquietud o si es de interés saber más sobre nuestro equipo
           y tareas, estamos a disposición.
         </p>
-        <form className={styles.form} onSubmit={onSubmit}>
+        <form id='form' className={styles.form} onSubmit={onSubmitCompany}>
           <input
             type="text"
-            placeholder="Nombre de la institución y/o empresa"
-            required
-          />
-          <input type="text" placeholder="Rubro" required />
-          <input
-            type="text"
-            placeholder="Nombre y apellido del contacto"
+            placeholder="Nombre de la institución y/o empresa*"
+            name='place'
             required
           />
           <input
             type="text"
-            placeholder="Rol ocupado por el contacto"
+            placeholder="Rubro*"
+            name='field'
             required
           />
-          <input type="mail" placeholder="Mail" required />
-          <input type="number" placeholder="Teléfono" />
-          <textarea placeholder="Cómo conociste a Preservate" />
-          <textarea placeholder="Motivo de contacto" required />
-          <button type="submit">Enviar</button>
+          <input
+            type="text"
+            placeholder="Nombre y apellido del contacto*"
+            name='name'
+            required
+          />
+          <input
+            type="text"
+            placeholder="Rol ocupado por el contacto*"
+            name='occupation'
+            required
+          />
+          <input type="mail" placeholder="Mail*" name='mail' required />
+          <input type="number" placeholder="Teléfono" name='phone' />
+          <textarea placeholder="Cómo conociste a Preservate" name='how' />
+          <textarea placeholder="Motivo de contacto*" name='motive' required />
+          <button type="submit" id='button'>Enviar</button>
         </form>
       </>
     );
@@ -107,37 +131,17 @@ function FormContent({ type }) {
           Si tenes ganas de sumarte como voluntarix, completá el formulario para
           más información y ya estarás inscriptx para la próxima convocatoria!
         </p>
-        <form className={styles.form} onSubmit={onSubmit}>
-          <input type="text" placeholder="Nombre completo" required />
-          <input type="number" placeholder="Edad" required />
-          <input type="mail" placeholder="Mail" required />
-          <input type="number" placeholder="Teléfono" required />
-          <input type="text" placeholder="Trabajo o estudios" />
-          <textarea placeholder="Cómo conociste a Preservate" />
-          <button type="submit">Enviar</button>
-        </form>
-      </>
-    );
-  }
-
-  if (type === 'info') {
-    return (
-      <>
-        <p>
-          Acorde a nuestra misión de brindar información y asesoramiento a todas
-          las personas interesadas en la temática es que te invitamos a que nos
-          compartas tus inquietudes. Recordá que las respuestas son de carácter
-          informativo y que siempre debes consultar con un profesional.{' '}
-        </p>
-        <form className={styles.form} onSubmit={onSubmit}>
-          <input type="text" placeholder="Nombre completo" required />
-          <input type="number" placeholder="Edad" required />
-          <input type="mail" placeholder="Mail" required />
-          <input type="number" placeholder="Teléfono" required />
-          <textarea placeholder="Cómo conociste a Preservate" />
+        <form className={styles.form} onSubmit={onSubmitVolunteer}>
+          <input type="text" placeholder="Nombre completo*" name='name' required />
+          <input type="number" placeholder="Edad*" name='age' required />
+          <input type="mail" placeholder="Mail*" name='mail' required />
+          <input type="number" placeholder="Teléfono*" name='phone' required />
+          <input type="text" placeholder="Trabajo o estudios" name='occupation' />
+          <textarea placeholder="Cómo conociste a Preservate" name='how' />
           <textarea
             type="text"
             placeholder="¿De qué te gustaría recibir información?"
+            name='info'
           />
           <button type="submit">Enviar</button>
         </form>
