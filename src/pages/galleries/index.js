@@ -38,7 +38,7 @@ function GalleryPhoto({ url, alt }) {
   return <img className={styles.galleryPhoto} src={url} alt={alt} />;
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const galleries = await getGalleries();
 
   return {
