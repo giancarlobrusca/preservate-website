@@ -43,5 +43,6 @@ export const getStaticProps = async () => {
 
   return {
     props: { gallery: galleries },
+    revalidate: 3600,
   };
 };
