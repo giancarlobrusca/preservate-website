@@ -1,6 +1,6 @@
 export const Hero = () => {
   return (
-    <div className="flex flex-col justify-around w-full h-full p-12 bg-center bg-contain lg:items-center md:px-24 lg:flex-row">
+    <div className="flex flex-col justify-around w-full h-full p-12 bg-center bg-contain lg:items-center lg:flex-row">
       <div>
         <h1 className="text-4xl font-semibold md:text-6xl lg:text-5xl xl:text-6xl">
           La salud sexual
