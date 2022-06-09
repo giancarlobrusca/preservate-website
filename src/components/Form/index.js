@@ -36,30 +36,24 @@ export const Form = () => {
 
 function FormContent({ type }) {
   function onSubmitCompany(e) {
-    console.log('submitted');
     e.preventDefault();
 
     emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_COMPANY_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_USER_ID)
       .then((result) => {
-        console.log(result.text);
         alert('Su petición se envio correctamente!!')
         location.reload();
       }, (error) => {
         alert('Hubo un error, volve a intentarlo.')
-        console.log(error.text);
       });
   }
   function onSubmitVolunteer(e) {
-    console.log('submitted');
     e.preventDefault();
 
     emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_VOLUNTEER_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_USER_ID)
       .then((result) => {
-        console.log(result.text);
         alert('Su petición se envio correctamente!!')
         location.reload();
       }, (error) => {
-        console.log(error.text);
         alert('Hubo un error, volve a intentarlo.')
       });
   }
